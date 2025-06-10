@@ -248,10 +248,23 @@ body::after {
     }
 }
 
+/* Add some animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .heroBox h1,
 .heroBox p,
 .heroBox h2 {
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 0.1s ease-out forwards;
 }
 
 .heroBox p {
@@ -260,10 +273,11 @@ body::after {
 
 .heroBox h2 {
     animation-delay: 0.4s;
-}
+} */
 
 /* Hover effects for navigation */
-.navBox ul li {
+
+ .navBox ul li {
     position: relative;
 }
 
