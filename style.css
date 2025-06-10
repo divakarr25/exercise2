@@ -97,9 +97,9 @@ body::after {
     transition: transform 0.3s ease;
 }
 
-.navBox ul li a:hover i {
+/* .navBox ul li a:hover i {
     transform: rotate(180deg);
-}
+} */
 
 /* Hero Section */
 .hero {
