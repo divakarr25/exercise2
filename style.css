@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #10012a 50%, #022344 100%);
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background pattern/texture */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: radial-gradient(ellipse at center right, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image:
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.02) 2px,
+            rgba(255, 255, 255, 0.02) 4px);
+    z-index: 1;
+}
+
+.componentSpacing {
+    position: relative;
+    z-index: 2;
+}
+
+/* Navigation Styles */
+.navBar {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.navContainer {
+    
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navBody {
+    width: 100%;
+}
+
+.navBlock {
+    width: 100%;
+}
+
+.navBox ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.navBox ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navBox ul li a:hover {
+    color: #ff8c00;
+    transform: translateY(-1px);
+}
+
+.navBox ul li a i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.navBox ul li a:hover i {
+    transform: rotate(180deg);
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0 120px 0;
+    position: relative;
+}
+
+.heroContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.heroBody {
+    width: 100%;
+}
+
+.heroBlock {
+    width: 100%;
+    max-width: 800px;
+}
+
+.heroBox {
+    text-align: left;
+}
+
+.heroBox h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 700;
+    margin-bottom: 40px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: capitalize;
+}
+.heroBox h1::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff8c00 0%, #ffa500 100%);
+    border-radius: 2px;
+}
+.heroBox p {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 60px;
+    line-height: 1.6;
+    max-width: 700px;
+    text-transform: capitalize;
+}
+
+.heroBox h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+
+/* Utility Classes */
+.dflex {
+    display: flex;
+}
+
+.dflex-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+.grid-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.screenSize {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navBox ul {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .navBox ul li a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 60px 0 80px 0;
+    }
+
+    .heroBox {
+        text-align: center;
+    }
+
+    .heroBox h1 {
+        margin-bottom: 30px;
+    }
+
+    .heroBox p {
+        margin-bottom: 40px;
+    }
+
+    .heroBox h2 {
+        font-size: 2rem;
+    }
+
+    .heroBox h2::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navContainer,
+    .heroContainer {
+        padding: 0 15px;
+    }
+
+    .navBox ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .navBox ul li a {
+        font-size: 13px;
+    }
+
+    .heroBox h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Add some animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heroBox h1,
+.heroBox p,
+.heroBox h2 {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.heroBox p {
+    animation-delay: 0.2s;
+}
+
+.heroBox h2 {
+    animation-delay: 0.4s;
+}
+
+/* Hover effects for navigation */
+.navBox ul li {
+    position: relative;
+}
+
+.navBox ul li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff8c00;
+    transition: width 0.3s ease;
+}
+
+.navBox ul li:hover::after {
+    width: 100%;
+}
